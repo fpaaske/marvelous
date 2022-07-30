@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.marvelous',
+  id: 'paaske.marvelous',
   appPath: 'src',
   appResourcesPath: 'App_Resources',
   android: {

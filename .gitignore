@@ -17,6 +17,7 @@ yarn-error.log*
 .idea
 .cloud
 .project
+.env
 tmp/
 typings/
 

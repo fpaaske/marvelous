@@ -1,0 +1,13 @@
+<GridLayout rows='*, auto' columns='*' [nsRouterLink]='nsRouterLink'>
+  <Image rowSpan="2" [src]='marvelImage | marvelImageUrl:"portrait_xlarge"'
+         stretch="aspectFill"
+  ></Image>
+  <FlexboxLayout row="1" flexDirection='column'
+                 justifyContent='flex-end'
+                 alignItems='center'
+                 class='bg-translucent'
+  >
+    <Label class='font-weight-bold' [text]='title'></Label>
+    <Label class='t-12' [text]='description || " "'></Label>
+  </FlexboxLayout>
+</GridLayout>

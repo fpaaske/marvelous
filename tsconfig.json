@@ -35,7 +35,6 @@
   ],
   "exclude": [
     "node_modules",
-    "platforms",
-    "e2e"
+    "platforms"
   ]
 }

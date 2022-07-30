@@ -1,0 +1,44 @@
+<MDBottomNavigation>
+  <MDTabStrip>
+    <MDTabStripItem>
+      <Label text="Characters"></Label>
+    </MDTabStripItem>
+    <MDTabStripItem>
+      <Label text="Series"></Label>
+    </MDTabStripItem>
+    <!--    <MDTabStripItem>
+          <Label text="Creators"></Label>
+        </MDTabStripItem>
+        <MDTabStripItem>
+          <Label text="Events"></Label>
+        </MDTabStripItem>
+        <MDTabStripItem>
+          <Label text="Comics"></Label>
+        </MDTabStripItem>
+        <MDTabStripItem>
+          <Label text="Stories"></Label>
+        </MDTabStripItem>-->
+  </MDTabStrip>
+  <MDTabContentItem>
+    <GridLayout>
+      <page-router-outlet name='charactersTab'></page-router-outlet>
+    </GridLayout>
+  </MDTabContentItem>
+  <MDTabContentItem>
+    <StackLayout>
+      <page-router-outlet name='seriesTab'></page-router-outlet>
+    </StackLayout>
+    <!--    <StackLayout>
+          <page-router-outlet name='creatorsTab'></page-router-outlet>
+        </StackLayout>
+        <StackLayout>
+          <page-router-outlet name='eventsTab'></page-router-outlet>
+        </StackLayout>
+        <StackLayout>
+          <page-router-outlet name='comicsTab'></page-router-outlet>
+        </StackLayout>
+        <StackLayout>
+          <page-router-outlet name='storiesTab'></page-router-outlet>
+        </StackLayout>-->
+  </MDTabContentItem>
+</MDBottomNavigation>

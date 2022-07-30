@@ -1,0 +1,9 @@
+<ActionBar title="Characters"></ActionBar>
+<GridLayout rows='auto, *'>
+  <SearchBar row='0'
+             hint="Search..."
+             (clear)="onClear($event)"
+             (submit)="onSubmit($event)"
+  ></SearchBar>
+  <GridLayout character-list row='1' [nameStartsWith]='searchString'></GridLayout>
+</GridLayout>

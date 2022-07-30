@@ -1,0 +1,25 @@
+<ActionBar title='Series'></ActionBar>
+<GridLayout rows='auto, *'>
+  <SearchBar row='0'
+             hint='Search...'
+             (textChange)='onTextChanged($event)'
+             (clear)='onClear($event)'
+             (submit)='onSubmit($event)'
+  ></SearchBar>
+  <CollectionView row='1'
+                  [items]='series'
+                  (loadMoreItems)='loadMoreItems()'
+                  (itemTap)='itemTap($event)'
+                  colWidth='50%'
+                  rowHeight='225'
+  >
+    <ng-template let-series='item'>
+      <StackLayout>
+        <list-item [marvelImage]='series.thumbnail'
+                   [title]='series.title'
+                   [description]='series.description'
+                   [nsRouterLink]='["../series", series.id]'></list-item>
+      </StackLayout>
+    </ng-template>
+  </CollectionView>
+</GridLayout>
