@@ -1,0 +1,22 @@
+<MDBottomNavigation>
+  <MDTabStrip>
+    <MDTabStripItem>
+      <Label class="t-16" text="Characters"></Label>
+    </MDTabStripItem>
+    <MDTabStripItem>
+      <Label class="t-16" text="Series"></Label>
+    </MDTabStripItem>
+  </MDTabStrip>
+  <MDTabContentItem>
+    <GridLayout>
+      <app-character-list></app-character-list>
+    <!--      <page-router-outlet name="charactersTab"></page-router-outlet>-->
+    </GridLayout>
+  </MDTabContentItem>
+  <MDTabContentItem>
+    <GridLayout>
+      <app-series-list></app-series-list>
+    <!--      <page-router-outlet name="seriesTab"></page-router-outlet>-->
+    </GridLayout>
+  </MDTabContentItem>
+</MDBottomNavigation>

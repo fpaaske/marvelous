@@ -1,0 +1,26 @@
+<GridLayout rows="auto, *">
+  <SearchBar
+    row="0"
+    hint="Search..."
+    (clear)="onClear($event)"
+    (submit)="onSubmit($event)"
+  ></SearchBar>
+  <CollectionView
+    row="1"
+    [items]="characters"
+    (loadMoreItems)="loadMoreItems()"
+    colWidth="50%"
+    rowHeight="225"
+  >
+    <ng-template let-item="item">
+      <StackLayout [nsRouterLink]="['character', item.id]">
+        <list-item
+          [marvelImage]="item.thumbnail"
+          [title]="item.name"
+          [description]="item.description"
+        >
+        </list-item>
+      </StackLayout>
+    </ng-template>
+  </CollectionView>
+</GridLayout>

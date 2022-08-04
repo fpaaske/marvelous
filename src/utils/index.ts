@@ -1,2 +1,2 @@
-export * from './status-bar';
-export * from './uuid';
+export * from "./status-bar";
+export * from "./uuid";

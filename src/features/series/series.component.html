@@ -1,0 +1,48 @@
+<ActionBar [title]="series?.title"></ActionBar>
+<detail-view
+  [marvelImage]="series?.thumbnail"
+  [title]="series?.title"
+  [description]="series?.description"
+  [attributionText]="attributionText"
+>
+  <StackLayout>
+    <GridLayout class="p-x-10" rows="auto, auto" columns="*, *">
+      <Label row="0" col="0" class="h2" text="Period"></Label>
+      <Label row="1" col="0" [text]="period"></Label>
+      <Label row="0" col="1" class="h2" text="Rating"></Label>
+      <Label row="1" col="1" [text]="series?.rating"></Label>
+    </GridLayout>
+    <Label class="h2 p-x-10" text="Creators"></Label>
+    <app-creator-link
+      *ngFor="let creator of series?.creators.items"
+      [text]="creator.name + (creator.role ? ' (' + creator.role + ')' : '')"
+      [creatorResourceUri]="creator.resourceURI"
+    ></app-creator-link>
+    <Label class="h2 p-x-10" text="Comics"></Label>
+    <app-comic-link
+      *ngFor="let comic of series?.comics.items"
+      [text]="comic.name"
+      [comicResourceUri]="comic.resourceURI"
+    ></app-comic-link>
+    <Label class="h2 p-x-10" text="Stories"></Label>
+    <app-story-link
+      *ngFor="let story of series?.stories.items"
+      [text]="story.name + (story.type ? ' (' + story.type + ')' : '')"
+      [storyResourceUri]="story.resourceURI"
+    ></app-story-link>
+    <Label class="h2 p-x-10" text="Events"></Label>
+    <app-event-link
+      *ngFor="let event of series?.events.items"
+      [text]="event.name"
+      [eventResourceUri]="event.resourceURI"
+    ></app-event-link>
+    <Label class="h2 p-x-10" text="Characters"></Label>
+    <app-character-link
+      *ngFor="let character of series?.characters.items"
+      [text]="
+        character.name + (character.role ? ' (' + character.role + ')' : '')
+      "
+      [characterResourceUri]="character.resourceURI"
+    ></app-character-link>
+  </StackLayout>
+</detail-view>

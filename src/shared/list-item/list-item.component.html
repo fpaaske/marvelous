@@ -1,0 +1,18 @@
+<GridLayout class="list-item" rows="*, auto" columns="*">
+  <Image
+    rowSpan="2"
+    class="rounded"
+    [src]="marvelImage | marvelImageUrl: 'portrait_xlarge'"
+    stretch="aspectFill"
+  ></Image>
+  <FlexboxLayout
+    row="1"
+    class="bg-translucent rounded-bottom p-x-5"
+    flexDirection="column"
+    justifyContent="flex-end"
+    alignItems="center"
+  >
+    <Label class="title font-weight-bold" [text]="title"></Label>
+    <Label class="description t-12" [text]="description || 'No description'"></Label>
+  </FlexboxLayout>
+</GridLayout>

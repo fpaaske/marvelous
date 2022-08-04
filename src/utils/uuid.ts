@@ -1,4 +1,4 @@
-import {isIOS} from '@nativescript/core';
+import { isIOS } from "@nativescript/core";
 
 export function generateUUID(): string {
   if (isIOS) {

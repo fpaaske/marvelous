@@ -1,4 +1,7 @@
-export function setStatusBarColor(color: 'light' | 'dark', tintColor?: string /* android only */) {
+export function setStatusBarColor(
+  color: "light" | "dark",
+  tintColor?: string /* android only */
+) {
   // if (isIOS) {
   //   // ios status-bar background color is set via the .action-bar class
   //   UIApplication.sharedApplication.setStatusBarStyleAnimated(color === 'light' ? UIStatusBarStyle.LightContent : UIStatusBarStyle.DarkContent, false);

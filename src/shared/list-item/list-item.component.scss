@@ -1,0 +1,23 @@
+.list-item {
+  margin: 5;
+}
+
+.title {
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+}
+
+.rounded {
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 0;
+  border-radius: 10 10;
+}
+
+.rounded-bottom {
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 0;
+  border-radius: 0 0 10 10;
+}
