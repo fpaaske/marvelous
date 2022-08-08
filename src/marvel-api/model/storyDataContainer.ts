@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { MarvelStory } from "~/marvel-api";
 
 
 export interface MarvelStoryDataContainer {
@@ -16,6 +17,6 @@ export interface MarvelStoryDataContainer {
     limit?: number;
     total?: number;
     count?: number;
-    results?: Array<string>
+    results?: Array<MarvelStory>
 }
 

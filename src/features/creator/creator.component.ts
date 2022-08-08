@@ -6,37 +6,37 @@ import {
 } from "@angular/core";
 import {
   DocspublicService,
-  MarvelComic,
-  MarvelComicDataWrapper,
+  MarvelCreator,
+  MarvelCreatorDataWrapper,
 } from "../../marvel-api";
 import { ActivatedRoute } from "@angular/router";
 import { tap } from "rxjs";
 
 @Component({
-  templateUrl: "./comic.component.html",
-  styleUrls: ["./comic.component.scss"],
+  templateUrl: "./creator.component.html",
+  styleUrls: ["./creator.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ComicComponent implements AfterViewInit {
+export class CreatorComponent implements AfterViewInit {
   attributionText: string;
-  comic: MarvelComic;
-  private readonly comicId: number;
+  creator: MarvelCreator;
+  private readonly creatorId: number;
 
   constructor(
     activatedRoute: ActivatedRoute,
     private cdr: ChangeDetectorRef,
     private api: DocspublicService
   ) {
-    this.comicId = activatedRoute.snapshot.params["id"];
-    console.log("comic id", this.comicId);
+    this.creatorId = activatedRoute.snapshot.params["id"];
+    console.log("creator id", this.creatorId);
   }
 
   ngAfterViewInit() {
     this.api
-      .getComicIndividual(this.comicId)
+      .getCreatorIndividual(this.creatorId)
       .pipe(
-        tap((result: MarvelComicDataWrapper) => {
-          this.comic = result.data.results[0];
+        tap((result: MarvelCreatorDataWrapper) => {
+          this.creator = result.data.results[0];
           this.attributionText = result.attributionText;
           this.cdr.markForCheck();
         })

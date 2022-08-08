@@ -23,6 +23,21 @@ export const routes: Routes = [
         (m) => m.CharacterModule
       ),
   },
+  {
+    path: "comic",
+    loadChildren: () =>
+      import("~/features/comic/comic.module").then((m) => m.ComicModule),
+  },
+  {
+    path: "story",
+    loadChildren: () =>
+      import("~/features/story/story.module").then((m) => m.StoryModule),
+  },
+  {
+    path: "creator",
+    loadChildren: () =>
+      import("~/features/creator/creator.module").then((m) => m.CreatorModule),
+  },
 ];
 
 @NgModule({

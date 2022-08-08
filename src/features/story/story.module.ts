@@ -6,19 +6,15 @@ import {
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "@nativescript/angular";
 import { SharedModule } from "~/shared/shared.module";
-import { ComicComponent } from "./comic.component";
+import { StoryComponent } from "./story.component";
 
-export const MODULE_COMPONENTS = [ComicComponent];
+export const MODULE_COMPONENTS = [StoryComponent];
 
 export const routes: Routes = [
   {
     path: ":id",
-    component: ComicComponent,
-  },
-  {
-    path: "series",
-    loadChildren: () =>
-      import("~/features/series/series.module").then((m) => m.SeriesModule),
+    component: StoryComponent,
+    children: [],
   },
   {
     path: "character",
@@ -28,9 +24,14 @@ export const routes: Routes = [
       ),
   },
   {
-    path: "story",
+    path: "comic",
     loadChildren: () =>
-      import("~/features/story/story.module").then((m) => m.StoryModule),
+      import("~/features/comic/comic.module").then((m) => m.ComicModule),
+  },
+  {
+    path: "series",
+    loadChildren: () =>
+      import("~/features/series/series.module").then((m) => m.SeriesModule),
   },
   {
     path: "creator",
@@ -45,4 +46,4 @@ export const routes: Routes = [
   exports: [...MODULE_COMPONENTS],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ComicModule {}
+export class StoryModule {}

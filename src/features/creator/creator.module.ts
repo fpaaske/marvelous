@@ -6,19 +6,14 @@ import {
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "@nativescript/angular";
 import { SharedModule } from "~/shared/shared.module";
-import { ComicComponent } from "./comic.component";
+import { CreatorComponent } from "./creator.component";
 
-export const MODULE_COMPONENTS = [ComicComponent];
+export const MODULE_COMPONENTS = [CreatorComponent];
 
 export const routes: Routes = [
   {
     path: ":id",
-    component: ComicComponent,
-  },
-  {
-    path: "series",
-    loadChildren: () =>
-      import("~/features/series/series.module").then((m) => m.SeriesModule),
+    component: CreatorComponent,
   },
   {
     path: "character",
@@ -28,14 +23,19 @@ export const routes: Routes = [
       ),
   },
   {
+    path: "comic",
+    loadChildren: () =>
+      import("~/features/comic/comic.module").then((m) => m.ComicModule),
+  },
+  {
+    path: "series",
+    loadChildren: () =>
+      import("~/features/series/series.module").then((m) => m.SeriesModule),
+  },
+  {
     path: "story",
     loadChildren: () =>
       import("~/features/story/story.module").then((m) => m.StoryModule),
-  },
-  {
-    path: "creator",
-    loadChildren: () =>
-      import("~/features/creator/creator.module").then((m) => m.CreatorModule),
   },
 ];
 
@@ -45,4 +45,4 @@ export const routes: Routes = [
   exports: [...MODULE_COMPONENTS],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ComicModule {}
+export class CreatorModule {}

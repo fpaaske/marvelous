@@ -11,6 +11,7 @@ import {
   MarvelCharacter,
   MarvelCharacterDataWrapper,
 } from "../../marvel-api";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-character-list",
@@ -24,6 +25,7 @@ export class CharacterListComponent implements AfterViewInit {
 
   constructor(
     page: Page,
+    private activatedRoute: ActivatedRoute,
     private cdr: ChangeDetectorRef,
     private api: DocspublicService
   ) {
