@@ -11,7 +11,7 @@ import { SharedModule } from "~/shared/shared.module";
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "tabs",
+    redirectTo: "tabs/default",
     pathMatch: "full",
   },
   {

@@ -43,7 +43,7 @@ export class SeriesComponent implements AfterViewInit {
           this.series = response.data.results[0];
           this.attributionText = response.attributionText;
           this.period = this.series?.startYear + " - " + this.series?.endYear;
-          this.cdr.detectChanges();
+          this.cdr.markForCheck();
         })
       )
       .subscribe();

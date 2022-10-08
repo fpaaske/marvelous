@@ -15,7 +15,6 @@ export const routes: Routes = [
   {
     path: ":id",
     component: CharacterComponent,
-    children: [],
   },
   {
     path: "series",
@@ -36,7 +35,7 @@ export const routes: Routes = [
     path: "creator",
     loadChildren: () =>
       import("~/features/creator/creator.module").then((m) => m.CreatorModule),
-  },
+  }
 ];
 
 @NgModule({

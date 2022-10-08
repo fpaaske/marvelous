@@ -5,7 +5,6 @@ import {
   NativeScriptHttpClientModule,
   NativeScriptRouterModule,
 } from "@nativescript/angular";
-import { NativeScriptMaterialBottomNavigationModule } from "@nativescript-community/ui-material-bottom-navigation/angular";
 import { MarvelImageUrlPipe } from "./image-url.directive";
 import { CollectionViewModule } from "@nativescript-community/ui-collectionview/angular";
 import { DetailViewComponent } from "./detail-view/detail-view.component";
@@ -23,7 +22,6 @@ const MODULES = [
   NativeScriptFormsModule,
   NativeScriptRouterModule,
   NativeScriptHttpClientModule,
-  NativeScriptMaterialBottomNavigationModule,
   CollectionViewModule,
 ];
 

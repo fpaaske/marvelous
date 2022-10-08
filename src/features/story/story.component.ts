@@ -41,7 +41,7 @@ export class StoryComponent implements AfterViewInit {
         tap((response: MarvelStoryDataWrapper) => {
           this.story = response.data.results[0];
           this.attributionText = response.attributionText;
-          this.cdr.detectChanges();
+          this.cdr.markForCheck();
         })
       )
       .subscribe();

@@ -13,6 +13,11 @@ export const MODULE_COMPONENTS = [SeriesListComponent];
 
 export const routes: Routes = [
   {
+    path: "",
+    pathMatch: "full",
+    redirectTo: "series-list"
+  },
+  {
     path: "series-list",
     component: SeriesListComponent,
   },

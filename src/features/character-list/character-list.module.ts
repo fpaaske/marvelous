@@ -15,6 +15,11 @@ export const MODULE_COMPONENTS = [CharacterListComponent];
 
 export const routes: Routes = [
   {
+    path: "",
+    pathMatch: "full",
+    redirectTo: "character-list"
+  },
+  {
     path: "character-list",
     component: CharacterListComponent,
   },
@@ -24,7 +29,7 @@ export const routes: Routes = [
       import("~/features/character/character.module").then(
         (m) => m.CharacterModule
       ),
-  },
+  }
 ];
 
 @NgModule({

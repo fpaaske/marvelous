@@ -15,7 +15,7 @@
     rowHeight="225"
   >
     <ng-template let-series="item">
-      <StackLayout [nsRouterLink]="['series', series.id]">
+      <StackLayout [nsRouterLink]="['../series', series.id]">
         <list-item
           [marvelImage]="series.thumbnail"
           [title]="series.title"

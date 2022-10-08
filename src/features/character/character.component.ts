@@ -41,7 +41,7 @@ export class CharacterComponent implements AfterViewInit {
         tap((response: MarvelCharacterDataWrapper) => {
           this.character = response.data.results[0];
           this.attributionText = response.attributionText;
-          this.cdr.detectChanges();
+          this.cdr.markForCheck();
         })
       )
       .subscribe();

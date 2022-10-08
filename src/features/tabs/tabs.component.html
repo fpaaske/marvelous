@@ -1,22 +1,17 @@
-<MDBottomNavigation>
-  <MDTabStrip>
-    <MDTabStripItem>
-      <Label class="t-16" text="Characters"></Label>
-    </MDTabStripItem>
-    <MDTabStripItem>
-      <Label class="t-16" text="Series"></Label>
-    </MDTabStripItem>
-  </MDTabStrip>
-  <MDTabContentItem>
-    <GridLayout>
-      <app-character-list></app-character-list>
-<!--      <page-router-outlet name="charactersTab"></page-router-outlet>-->
-    </GridLayout>
-  </MDTabContentItem>
-  <MDTabContentItem>
-    <GridLayout>
-      <app-series-list></app-series-list>
-<!--      <page-router-outlet name="seriesTab"></page-router-outlet>-->
-    </GridLayout>
-  </MDTabContentItem>
-</MDBottomNavigation>
+<GridLayout rows="* auto">
+  <GridLayout row="0" [hidden]="selectedTabIndex !== 0">
+    <page-router-outlet name="charactersTab"></page-router-outlet>
+  </GridLayout>
+  <GridLayout row="0" [hidden]="selectedTabIndex !== 1">
+    <page-router-outlet name="seriesTab"></page-router-outlet>
+  </GridLayout>
+
+  <BottomNavigationBar row="1" class="bottom-navigation-bar"
+                       (tabSelected)="tabSelected($event)"
+  >
+    <BottomNavigationTab title="Characters">
+    </BottomNavigationTab>
+    <BottomNavigationTab title="Series">
+    </BottomNavigationTab>
+  </BottomNavigationBar>
+</GridLayout>
