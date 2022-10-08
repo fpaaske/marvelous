@@ -5,29 +5,33 @@
              [attributionText]="attributionText"
 >
   <StackLayout>
-    <Label class="h2 p-x-10" text="Series"></Label>
-    <app-series-link
-      *ngFor="let s of creator?.series.items"
-      [text]="s.name"
-      [seriesResourceUri]="s.resourceURI"
-    ></app-series-link>
-    <Label class="h2 p-x-10" text="Comics"></Label>
-    <app-comics-link
-      *ngFor="let s of creator?.comics.items"
-      [text]="s.name"
-      [comicsResourceUri]="s.resourceURI"
-    ></app-comics-link>
-    <Label class="h2 p-x-10" text="Stories"></Label>
-    <app-story-link
-      *ngFor="let story of creator?.stories.items"
-      [text]="story.name"
-      [storyResourceUri]="story.resourceURI"
-    ></app-story-link>
-    <Label class="h2 p-x-10" text="Events"></Label>
-    <app-event-link
-      *ngFor="let event of creator?.events.items"
-      [text]="event.name"
-      [eventResourceUri]="event.resourceURI"
-    ></app-event-link>
+    <section-view title="Series">
+      <app-series-link
+        *ngFor="let s of creator?.series.items"
+        [text]="s.name"
+        [seriesResourceUri]="s.resourceURI"
+      ></app-series-link>
+    </section-view>
+    <section-view title="Comics">
+      <app-comics-link
+        *ngFor="let s of creator?.comics.items"
+        [text]="s.name"
+        [comicsResourceUri]="s.resourceURI"
+      ></app-comics-link>
+    </section-view>
+    <section-view title="Stories">
+      <app-story-link
+        *ngFor="let story of creator?.stories.items"
+        [text]="story.name"
+        [storyResourceUri]="story.resourceURI"
+      ></app-story-link>
+    </section-view>
+    <section-view title="Events">
+      <app-event-link
+        *ngFor="let event of creator?.events.items"
+        [text]="event.name"
+        [eventResourceUri]="event.resourceURI"
+      ></app-event-link>
+    </section-view>
   </StackLayout>
 </detail-view>

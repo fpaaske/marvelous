@@ -1,23 +1,17 @@
 .list-item {
-  margin: 5;
-}
-
-.title {
-  text-align: center;
-}
-
-.description {
-  text-align: center;
+  margin: 10;
+  //  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  //  border-radius: 10;
 }
 
 .rounded {
-  border-color: rgba(0, 0, 0, 0);
-  border-width: 0;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1;
   border-radius: 10 10;
 }
 
 .rounded-bottom {
-  border-color: rgba(0, 0, 0, 0);
-  border-width: 0;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1;
   border-radius: 0 0 10 10;
 }

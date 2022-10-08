@@ -2,8 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "@nativescript/angular";
 import { ActivatedRoute } from "@angular/router";
 import { Page } from "@nativescript/core";
-import { TabSelectedEventData } from "@nativescript-community/ui-material-bottomnavigationbar";
+import { TabReselectedEventData, TabSelectedEventData } from "@nativescript-community/ui-material-bottomnavigationbar";
 import { NavigationService } from "../../shared/services/navigation.service";
+import Theme from "@nativescript/theme";
 
 @Component({
   selector: "app-tabs",
@@ -42,5 +43,9 @@ export class TabsComponent implements OnInit {
   tabSelected($event: TabSelectedEventData) {
     this.selectedTabIndex = $event.newIndex;
     this.navigationService.setCurrentOutlet(this.outletMap[this.selectedTabIndex]);
+  }
+
+  tabReselected($event: TabReselectedEventData) {
+    Theme.toggleMode();
   }
 }

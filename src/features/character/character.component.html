@@ -1,4 +1,4 @@
-<ActionBar [title]="character?.name"></ActionBar>
+<ActionBar [title]="character?.name || 'Character'"></ActionBar>
 <detail-view
   [marvelImage]="character?.thumbnail"
   [title]="character?.name"
@@ -6,29 +6,33 @@
   [attributionText]="attributionText"
 >
   <StackLayout>
-    <Label class="h2 p-x-10" text="Series"></Label>
-    <app-series-link
-      *ngFor="let s of character?.series.items"
-      [text]="s.name"
-      [seriesResourceUri]="s.resourceURI"
-    ></app-series-link>
-    <Label class="h2 p-x-10" text="Comics"></Label>
-    <app-comic-link
-      *ngFor="let comic of character?.comics.items"
-      [text]="comic.name"
-      [comicResourceUri]="comic.resourceURI"
-    ></app-comic-link>
-    <Label class="h2 p-x-10" text="Stories"></Label>
-    <app-story-link
-      *ngFor="let story of character?.stories.items"
-      [text]="story.name"
-      [storyResourceUri]="story.resourceURI"
-    ></app-story-link>
-    <Label class="h2 p-x-10" text="Events"></Label>
-    <app-event-link
-      *ngFor="let event of character?.events.items"
-      [text]="event.name"
-      [eventResourceUri]="event.resourceURI"
-    ></app-event-link>
+    <section-view title="Series">
+      <app-series-link
+        *ngFor="let s of character?.series.items"
+        [text]="s.name"
+        [seriesResourceUri]="s.resourceURI"
+      ></app-series-link>
+    </section-view>
+    <section-view title="Comics">
+      <app-comic-link
+        *ngFor="let comic of character?.comics.items"
+        [text]="comic.name"
+        [comicResourceUri]="comic.resourceURI"
+      ></app-comic-link>
+    </section-view>
+    <section-view title="Stories">
+      <app-story-link
+        *ngFor="let story of character?.stories.items"
+        [text]="story.name"
+        [storyResourceUri]="story.resourceURI"
+      ></app-story-link>
+    </section-view>
+    <section-view title="Events">
+      <app-event-link
+        *ngFor="let event of character?.events.items"
+        [text]="event.name"
+        [eventResourceUri]="event.resourceURI"
+      ></app-event-link>
+    </section-view>
   </StackLayout>
 </detail-view>

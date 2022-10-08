@@ -3,6 +3,7 @@ import { AndroidActivityBackPressedEventData, AndroidApplication, Application, i
 import { RouterExtensions } from "@nativescript/angular";
 import { NavigationService } from "~/shared/services/navigation.service";
 import { tap } from "rxjs";
+import Theme from "@nativescript/theme";
 
 @Component({
   selector: "app-root",
@@ -13,6 +14,7 @@ export class AppComponent {
 
   constructor(private routerExtensions: RouterExtensions,
               private navigationService: NavigationService) {
+    Theme.setMode(Theme.Auto);
 
     navigationService.currentOutlet$.pipe(
       tap(index => this.currentOutlet = index)

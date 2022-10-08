@@ -14,10 +14,9 @@
           [text]="title"
         ></Label>
       </GridLayout>
-      <StackLayout>
-        <Label class="h2 p-x-10" text="Description"></Label>
+      <section-view title="Description">
         <Label class="p-x-10 description" [text]="description || 'No description'"></Label>
-      </StackLayout>
+      </section-view>
       <ng-content></ng-content>
       <Label class="p-10 t-12 text-right" [text]="attributionText"></Label>
     </StackLayout>

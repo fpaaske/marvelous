@@ -1,16 +1,60 @@
+@import "@nativescript/theme/core";
+@import "@nativescript/theme/ruby";
+
+// $background: #f1faee;
+// $primary: #1d3557;
+// $secondary: #457b9d;
+// $background-dark: #1d3557;
+// $primary-dark: #f1faee;
+// $secondary-dark: #457b9d;
+// $accent: #a8dadc;
+// $accent-dark: #457b9d;
+// $complementary
+// $complementary-color
+// $complementary-dark
+// $complementary-color-dark
+
+@import "@nativescript/theme/index";
+
 * {
-  font: "OpenSans-Regular", "Open Sans";
+  font-family: "OpenSans-Regular", "Open Sans", serif;
+  font-size: 15;
 }
 
 .font-bold {
-  font: "OpenSans-Bold", "Open Sans Bold";
+  font-family: "OpenSans-Bold", "Open Sans Bold", serif;
 }
 
 .font-light {
-  font: "OpenSans-Light", "Open Sans Light";
+  font-family: "OpenSans-Light", "Open Sans Light", serif;
+}
+
+ActionBar {
+  @include colorize(
+          $color: primary,
+          $background-color: background
+  )
 }
 
 .bg-translucent {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
+
+.accent {
+  @include colorize(
+          $contrasted-color: accent background 20% 30%,
+          $alternate-background-color: primary
+  );
+}
+
+.bottom-navigation-bar {
+
+  @include colorize(
+    $active-color: primary,
+    $alternate-inactive-color: primary,
+    $background-color: background,
+  );
+  // background-color: #ffffff;
+}
+

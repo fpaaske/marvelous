@@ -16,6 +16,7 @@ import { EventLinkComponent } from "~/shared/event-link/event-link.component";
 import { SeriesLinkComponent } from "~/shared/series-link/series-link.component";
 import { ComicLinkComponent } from "~/shared/comic-link/comic-link.component";
 import { CreatorLinkComponent } from "~/shared/creator-link/creator-link.component";
+import { SectionViewComponent } from "~/shared/section-view/section-view.component";
 
 const MODULES = [
   NativeScriptCommonModule,
@@ -30,6 +31,7 @@ const PIPES = [MarvelImageUrlPipe];
 const COMPONENTS = [
   ListItemComponent,
   DetailViewComponent,
+  SectionViewComponent,
   LinkLabelComponent,
   CharacterLinkComponent,
   SeriesLinkComponent,
