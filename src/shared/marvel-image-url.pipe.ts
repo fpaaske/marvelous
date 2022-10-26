@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { MarvelImage } from "../marvel-api";
+import { MarvelImage } from "~/marvel-api";
 
 declare type MarvelImageFormat =
   | "portrait_small"

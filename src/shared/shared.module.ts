@@ -3,20 +3,20 @@ import {
   NativeScriptCommonModule,
   NativeScriptFormsModule,
   NativeScriptHttpClientModule,
-  NativeScriptRouterModule,
+  NativeScriptRouterModule
 } from "@nativescript/angular";
-import { MarvelImageUrlPipe } from "./image-url.directive";
 import { CollectionViewModule } from "@nativescript-community/ui-collectionview/angular";
+import { MarvelImageUrlPipe } from "./marvel-image-url.pipe";
 import { DetailViewComponent } from "./detail-view/detail-view.component";
 import { ListItemComponent } from "./list-item/list-item.component";
-import { CharacterLinkComponent } from "~/shared/character-link/character-link.component";
-import { LinkLabelComponent } from "~/shared/link-label/link-label.component";
-import { StoryLinkComponent } from "~/shared/story-link/story-link.component";
-import { EventLinkComponent } from "~/shared/event-link/event-link.component";
-import { SeriesLinkComponent } from "~/shared/series-link/series-link.component";
-import { ComicLinkComponent } from "~/shared/comic-link/comic-link.component";
-import { CreatorLinkComponent } from "~/shared/creator-link/creator-link.component";
-import { SectionViewComponent } from "~/shared/section-view/section-view.component";
+import { CharacterLinkComponent } from "./character-link/character-link.component";
+import { LinkLabelComponent } from "./link-label/link-label.component";
+import { StoryLinkComponent } from "./story-link/story-link.component";
+import { EventLinkComponent } from "./event-link/event-link.component";
+import { SeriesLinkComponent } from "./series-link/series-link.component";
+import { ComicLinkComponent } from "./comic-link/comic-link.component";
+import { CreatorLinkComponent } from "./creator-link/creator-link.component";
+import { SectionViewComponent } from "./section-view/section-view.component";
 
 const MODULES = [
   NativeScriptCommonModule,
