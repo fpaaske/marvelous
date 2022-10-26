@@ -1,9 +1,9 @@
 <GridLayout rows="* auto">
   <GridLayout row="0" [hidden]="selectedTabIndex !== 0">
-    <page-router-outlet name="charactersTab"></page-router-outlet>
+    <router-outlet name="charactersTab"></router-outlet>
   </GridLayout>
   <GridLayout row="0" [hidden]="selectedTabIndex !== 1">
-    <page-router-outlet name="seriesTab"></page-router-outlet>
+    <router-outlet name="seriesTab"></router-outlet>
   </GridLayout>
 
   <BottomNavigationBar row="1" class="bottom-navigation-bar"
