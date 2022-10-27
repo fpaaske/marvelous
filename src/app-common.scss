@@ -29,6 +29,10 @@
   font-family: "OpenSans-Light", "Open Sans Light", serif;
 }
 
+.mat-icon {
+  font-family: "MaterialIconsOutlined-Regular", "Material Icons Outlined", serif;
+}
+
 ActionBar {
   @include colorize(
           $color: primary,
