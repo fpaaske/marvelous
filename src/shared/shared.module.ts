@@ -3,7 +3,7 @@ import {
   NativeScriptCommonModule,
   NativeScriptFormsModule,
   NativeScriptHttpClientModule,
-  NativeScriptRouterModule
+  NativeScriptRouterModule,
 } from "@nativescript/angular";
 import { CollectionViewModule } from "@nativescript-community/ui-collectionview/angular";
 import { MarvelImageUrlPipe } from "./marvel-image-url.pipe";

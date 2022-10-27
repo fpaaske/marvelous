@@ -17,7 +17,7 @@ export const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "character-list"
+    redirectTo: "character-list",
   },
   {
     path: "character-list",
@@ -29,7 +29,7 @@ export const routes: Routes = [
       import("~/features/character/character.module").then(
         (m) => m.CharacterModule
       ),
-  }
+  },
 ];
 
 @NgModule({

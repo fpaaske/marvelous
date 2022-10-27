@@ -6,11 +6,17 @@
     <router-outlet name="seriesTab"></router-outlet>
   </GridLayout>
 
-  <BottomNavigationBar row="1" class="bottom-navigation-bar"
-                       (tabSelected)="tabSelected($event)"
-                       (tabReselected)="tabReselected($event)"
+  <BottomNavigationBar
+    row="1"
+    class="bottom-navigation-bar"
+    (tabSelected)="tabSelected($event)"
+    (tabReselected)="tabReselected($event)"
   >
-    <BottomNavigationTab class="mat-icon" icon="font://&#xe8d0;" title="Characters">
+    <BottomNavigationTab
+      class="mat-icon"
+      icon="font://&#xe8d0;"
+      title="Characters"
+    >
     </BottomNavigationTab>
     <BottomNavigationTab class="mat-icon" icon="font://&#xe02f;" title="Series">
     </BottomNavigationTab>

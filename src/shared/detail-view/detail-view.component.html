@@ -15,7 +15,10 @@
         ></Label>
       </GridLayout>
       <section-view title="Description">
-        <Label class="p-x-10 description" [text]="description || 'No description'"></Label>
+        <Label
+          class="p-x-10 description"
+          [text]="description || 'No description'"
+        ></Label>
       </section-view>
       <ng-content></ng-content>
       <Label class="p-10 t-12 text-right" [text]="attributionText"></Label>

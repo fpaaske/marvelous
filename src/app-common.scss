@@ -34,10 +34,7 @@
 }
 
 ActionBar {
-  @include colorize(
-          $color: primary,
-          $background-color: background
-  )
+  @include colorize($color: primary, $background-color: background);
 }
 
 .bg-translucent {
@@ -47,18 +44,16 @@ ActionBar {
 
 .accent {
   @include colorize(
-          $contrasted-color: accent background 20% 30%,
-          $alternate-background-color: primary
+    $contrasted-color: accent background 20% 30%,
+    $alternate-background-color: primary
   );
 }
 
 .bottom-navigation-bar {
-
   @include colorize(
     $active-color: primary,
     $alternate-inactive-color: primary,
-    $background-color: background,
+    $background-color: background
   );
   // background-color: #ffffff;
 }
-

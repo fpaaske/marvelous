@@ -15,7 +15,7 @@ export const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "series-list"
+    redirectTo: "series-list",
   },
   {
     path: "series-list",
