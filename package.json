@@ -18,8 +18,6 @@
     "@angular/router": "~14.1.0",
     "@nativescript-community/ui-collectionview": "^4.0.0",
     "@nativescript-community/ui-material-bottomnavigationbar": "^7.0.0",
-    "@nativescript-community/ui-material-bottom-navigation": "^7.0.0",
-    "@nativescript-community/ui-material-tabs": "^7.0.0",
     "@nativescript/angular": "^14.2.5",
     "@nativescript/core": "~8.3.1",
     "@nativescript/theme": "~3.0.2",
