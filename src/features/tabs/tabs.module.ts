@@ -13,8 +13,12 @@ import { TabsComponent } from "./tabs.component";
 import { CharacterListModule } from "../character-list/character-list.module";
 import { SeriesListModule } from "../series-list/series-list.module";
 import { NativeScriptMaterialBottomNavigationBarModule } from "@nativescript-community/ui-material-bottomnavigationbar/angular";
+import { WrappedEmptyOutletComponentComponent } from "./wrapped-empty-outlet-component.component";
 
-export const MODULE_COMPONENTS = [TabsComponent];
+export const MODULE_COMPONENTS = [
+  TabsComponent,
+  WrappedEmptyOutletComponentComponent,
+];
 
 const routes: Routes = [
   {
@@ -24,7 +28,7 @@ const routes: Routes = [
       {
         path: "characters",
         outlet: "charactersTab",
-        component: NSEmptyOutletComponent,
+        component: WrappedEmptyOutletComponentComponent,
         loadChildren: () =>
           import("~/features/character-list/character-list.module").then(
             (m) => m.CharacterListModule
@@ -33,7 +37,7 @@ const routes: Routes = [
       {
         path: "series",
         outlet: "seriesTab",
-        component: NSEmptyOutletComponent,
+        component: WrappedEmptyOutletComponentComponent,
         loadChildren: () =>
           import("~/features/series-list/series-list.module").then(
             (m) => m.SeriesListModule
