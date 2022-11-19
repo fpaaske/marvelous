@@ -1,17 +1,15 @@
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
 } from "@angular/core";
-import { Page, SearchBar } from "@nativescript/core";
+import { ObservableArray, SearchBar } from "@nativescript/core";
 import { tap } from "rxjs/operators";
 import {
   DocspublicService,
   MarvelCharacter,
   MarvelCharacterDataWrapper,
 } from "../../marvel-api";
-import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-character-list",
@@ -21,13 +19,10 @@ import { ActivatedRoute } from "@angular/router";
 export class CharacterListComponent implements AfterViewInit {
   searchString: string;
 
-  characters: Array<MarvelCharacter> = new Array<MarvelCharacter>();
+  characters: ObservableArray<MarvelCharacter> =
+    new ObservableArray<MarvelCharacter>();
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private cdr: ChangeDetectorRef,
-    private api: DocspublicService
-  ) {}
+  constructor(private api: DocspublicService) {}
 
   onSubmit(args) {
     const searchBar = args.object as SearchBar;
@@ -65,10 +60,7 @@ export class CharacterListComponent implements AfterViewInit {
       )
       .pipe(
         tap((response: MarvelCharacterDataWrapper) => {
-          const marvelCharacters = response.data.results;
-          console.log("Marvel Characters: " + marvelCharacters.length);
-          this.characters.push(...marvelCharacters);
-          this.cdr.markForCheck();
+          this.characters.push(...response.data.results);
         })
       )
       .subscribe();

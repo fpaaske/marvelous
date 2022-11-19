@@ -1,7 +1,6 @@
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
 } from "@angular/core";
 import {
@@ -10,7 +9,7 @@ import {
   MarvelSeriesDataWrapper,
 } from "../../marvel-api";
 import { tap } from "rxjs/operators";
-import { ItemEventData, SearchBar } from "@nativescript/core";
+import { ItemEventData, ObservableArray, SearchBar } from "@nativescript/core";
 
 @Component({
   selector: "app-series-list",
@@ -18,10 +17,10 @@ import { ItemEventData, SearchBar } from "@nativescript/core";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SeriesListComponent implements AfterViewInit {
-  series: Array<MarvelSeries> = [];
+  series: ObservableArray<MarvelSeries> = new ObservableArray<MarvelSeries>();
   private searchString: string;
 
-  constructor(private cdr: ChangeDetectorRef, private api: DocspublicService) {}
+  constructor(private api: DocspublicService) {}
 
   ngAfterViewInit() {
     this.loadMoreItems();
@@ -73,8 +72,7 @@ export class SeriesListComponent implements AfterViewInit {
       )
       .pipe(
         tap((response: MarvelSeriesDataWrapper) => {
-          this.series = this.series.concat(response.data.results);
-          this.cdr.markForCheck();
+          this.series.push(...response.data.results);
         })
       )
       .subscribe();
