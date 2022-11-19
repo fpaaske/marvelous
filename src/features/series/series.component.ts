@@ -25,12 +25,10 @@ export class SeriesComponent implements AfterViewInit {
   period: string;
 
   constructor(
-    page: Page,
     activatedRoute: ActivatedRoute,
     private cdr: ChangeDetectorRef,
     private api: DocspublicService
   ) {
-    page.on(Page.navigatedFromEvent, () => {});
     this.seriesId = activatedRoute.snapshot.params["id"];
     console.log("series id", this.seriesId);
   }

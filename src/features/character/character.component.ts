@@ -24,12 +24,10 @@ export class CharacterComponent implements AfterViewInit {
   private readonly characterId: number;
 
   constructor(
-    page: Page,
     activatedRoute: ActivatedRoute,
     private cdr: ChangeDetectorRef,
     private api: DocspublicService
   ) {
-    page.on(Page.navigatedFromEvent, () => {});
     this.characterId = activatedRoute.snapshot.params["id"];
     console.log("character id", this.characterId);
   }

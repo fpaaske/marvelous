@@ -24,13 +24,10 @@ export class CharacterListComponent implements AfterViewInit {
   characters: Array<MarvelCharacter> = new Array<MarvelCharacter>();
 
   constructor(
-    page: Page,
     private activatedRoute: ActivatedRoute,
     private cdr: ChangeDetectorRef,
     private api: DocspublicService
-  ) {
-    page.on(Page.navigatedFromEvent, () => {});
-  }
+  ) {}
 
   onSubmit(args) {
     const searchBar = args.object as SearchBar;

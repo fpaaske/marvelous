@@ -24,12 +24,10 @@ export class StoryComponent implements AfterViewInit {
   private readonly storyId: number;
 
   constructor(
-    page: Page,
     activatedRoute: ActivatedRoute,
     private cdr: ChangeDetectorRef,
     private api: DocspublicService
   ) {
-    page.on(Page.navigatedFromEvent, () => {});
     this.storyId = activatedRoute.snapshot.params["id"];
     console.log("story id", this.storyId);
   }

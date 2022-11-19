@@ -10,7 +10,7 @@ import {
   MarvelSeriesDataWrapper,
 } from "../../marvel-api";
 import { tap } from "rxjs/operators";
-import { ItemEventData, Page, SearchBar } from "@nativescript/core";
+import { ItemEventData, SearchBar } from "@nativescript/core";
 
 @Component({
   selector: "app-series-list",
@@ -21,13 +21,7 @@ export class SeriesListComponent implements AfterViewInit {
   series: Array<MarvelSeries> = [];
   private searchString: string;
 
-  constructor(
-    page: Page,
-    private cdr: ChangeDetectorRef,
-    private api: DocspublicService
-  ) {
-    page.on(Page.navigatedFromEvent, () => {});
-  }
+  constructor(private cdr: ChangeDetectorRef, private api: DocspublicService) {}
 
   ngAfterViewInit() {
     this.loadMoreItems();

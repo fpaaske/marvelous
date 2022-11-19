@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "@nativescript/angular";
 import { ActivatedRoute } from "@angular/router";
-import { Page } from "@nativescript/core";
 import { NavigationService } from "../../shared/services/navigation.service";
 
 @Component({
@@ -16,14 +15,10 @@ export class TabsComponent implements OnInit {
   selectedTabIndex = 0;
 
   constructor(
-    page: Page,
     private routerExtensions: RouterExtensions,
     private activatedRoute: ActivatedRoute,
     private navigationService: NavigationService
-  ) {
-    page.on(Page.navigatedFromEvent, () => {});
-    page.actionBarHidden = true;
-  }
+  ) {}
 
   ngOnInit() {
     this.routerExtensions
