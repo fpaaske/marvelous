@@ -50,6 +50,9 @@ ActionBar {
 }
 
 .bottom-navigation-bar {
+  border-top-width: 1;
+  border-top-color: rgba(0,0,0,0.2);
+
   @include colorize(
     $active-color: primary,
     $alternate-inactive-color: primary,

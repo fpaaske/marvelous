@@ -6,19 +6,24 @@
     <router-outlet name="seriesTab"></router-outlet>
   </GridLayout>
 
-  <BottomNavigationBar
+  <GridLayout
     row="1"
-    class="bottom-navigation-bar"
-    (tabSelected)="tabSelected($event)"
-    (tabReselected)="tabReselected($event)"
+    columns="* *"
+    class="bottom-navigation-bar text-center p-10"
   >
-    <BottomNavigationTab
-      class="mat-icon"
-      icon="font://&#xe8d0;"
-      title="Characters"
+    <StackLayout
+      col="0"
+      (tap)="tabSelected(0)"
     >
-    </BottomNavigationTab>
-    <BottomNavigationTab class="mat-icon" icon="font://&#xe02f;" title="Series">
-    </BottomNavigationTab>
-  </BottomNavigationBar>
+      <Label class="mat-icon" text="&#xe8d0;"></Label>
+      <Label text="Characters"></Label>
+    </StackLayout>
+    <StackLayout
+      col="1"
+      (tap)="tabSelected(1)"
+    >
+      <Label class="mat-icon" text="&#xe02f;"></Label>
+      <Label text="Series"></Label>
+    </StackLayout>
+  </GridLayout>
 </GridLayout>

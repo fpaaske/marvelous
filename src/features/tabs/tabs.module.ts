@@ -12,7 +12,6 @@ import { SharedModule } from "~/shared/shared.module";
 import { TabsComponent } from "./tabs.component";
 import { CharacterListModule } from "../character-list/character-list.module";
 import { SeriesListModule } from "../series-list/series-list.module";
-import { NativeScriptMaterialBottomNavigationBarModule } from "@nativescript-community/ui-material-bottomnavigationbar/angular";
 
 export const MODULE_COMPONENTS = [TabsComponent];
 
@@ -49,7 +48,6 @@ const routes: Routes = [
     CharacterListModule,
     SeriesListModule,
     NativeScriptRouterModule.forChild(routes),
-    NativeScriptMaterialBottomNavigationBarModule,
   ],
   declarations: [...MODULE_COMPONENTS],
   exports: [...MODULE_COMPONENTS],
